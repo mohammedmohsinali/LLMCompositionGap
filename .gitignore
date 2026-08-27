@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.env
+*.key
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+analysis/figures/
+analysis/recompute_out.json

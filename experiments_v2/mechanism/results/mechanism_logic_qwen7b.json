@@ -1,0 +1,1616 @@
+{
+  "model": "qwen7b",
+  "domain": "logic",
+  "experiment": "mechanism_structure_hint",
+  "timestamp": "2026-04-29T11:26:48.883362",
+  "original": {
+    "condition": "original",
+    "eligible_examples": 80,
+    "composed_correct": 34,
+    "gap_cases": 46,
+    "gap_rate": 0.575,
+    "gap_pct": 57.5,
+    "per_type": {
+      "CONDITIONAL-CHAIN": {
+        "total": 75,
+        "correct": 31,
+        "wrong": 44,
+        "gap_rate": 0.5867
+      },
+      "DISJUNCTIVE": {
+        "total": 4,
+        "correct": 2,
+        "wrong": 2,
+        "gap_rate": 0.5
+      },
+      "SYLLOGISM": {
+        "total": 1,
+        "correct": 1,
+        "wrong": 0,
+        "gap_rate": 0.0
+      }
+    }
+  },
+  "hint_correct": {
+    "condition": "hint_correct",
+    "eligible_examples": 80,
+    "composed_correct": 39,
+    "gap_cases": 41,
+    "gap_rate": 0.5125,
+    "gap_pct": 51.2,
+    "per_type": {
+      "CONDITIONAL-CHAIN": {
+        "total": 75,
+        "correct": 36,
+        "wrong": 39,
+        "gap_rate": 0.52
+      },
+      "DISJUNCTIVE": {
+        "total": 4,
+        "correct": 2,
+        "wrong": 2,
+        "gap_rate": 0.5
+      },
+      "SYLLOGISM": {
+        "total": 1,
+        "correct": 1,
+        "wrong": 0,
+        "gap_rate": 0.0
+      }
+    }
+  },
+  "hint_wrong": {
+    "condition": "hint_wrong",
+    "eligible_examples": 80,
+    "composed_correct": 35,
+    "gap_cases": 45,
+    "gap_rate": 0.5625,
+    "gap_pct": 56.2,
+    "per_type": {
+      "CONDITIONAL-CHAIN": {
+        "total": 75,
+        "correct": 32,
+        "wrong": 43,
+        "gap_rate": 0.5733
+      },
+      "DISJUNCTIVE": {
+        "total": 4,
+        "correct": 2,
+        "wrong": 2,
+        "gap_rate": 0.5
+      },
+      "SYLLOGISM": {
+        "total": 1,
+        "correct": 1,
+        "wrong": 0,
+        "gap_rate": 0.0
+      }
+    }
+  },
+  "predictions": {
+    "hint_correct": [
+      {
+        "idx": 21,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 22,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 23,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 24,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 25,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 26,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 30,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 31,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 32,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 33,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 34,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 35,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 42,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 43,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 44,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 46,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 47,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 48,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 49,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 50,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 51,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 52,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 53,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 54,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 55,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 56,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 57,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 69,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 70,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 76,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 77,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 78,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 87,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 102,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 103,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 104,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 108,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 109,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 110,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 112,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 113,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 128,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 129,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 130,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 131,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 135,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 136,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 137,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 140,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 141,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 142,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 143,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 144,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 150,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 151,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 152,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 153,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 154,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 155,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 164,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 165,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 166,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 170,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 171,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 172,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 173,
+        "gold_type": "DISJUNCTIVE",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 174,
+        "gold_type": "DISJUNCTIVE",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 175,
+        "gold_type": "DISJUNCTIVE",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 179,
+        "gold_type": "SYLLOGISM",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 193,
+        "gold_type": "DISJUNCTIVE",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 194,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 195,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 196,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 197,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 198,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 199,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 200,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 201,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 202,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 203,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_correct",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      }
+    ],
+    "hint_wrong": [
+      {
+        "idx": 21,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 22,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 23,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 24,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 25,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 26,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 30,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 31,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 32,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 33,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 34,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 35,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 42,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 43,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 44,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 46,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 47,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 48,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 49,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 50,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 51,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 52,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 53,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 54,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 55,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 56,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 57,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 69,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 70,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 76,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 77,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 78,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 87,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 102,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 103,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 104,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 108,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 109,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 110,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 112,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 113,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 128,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 129,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 130,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 131,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 135,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 136,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 137,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 140,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 141,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 142,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 143,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 144,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 150,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 151,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 152,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 153,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 154,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 155,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "True",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 164,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 165,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 166,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 170,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 171,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 172,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 173,
+        "gold_type": "DISJUNCTIVE",
+        "gold_label": "Uncertain",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "CONDITIONAL-CHAIN",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 174,
+        "gold_type": "DISJUNCTIVE",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 175,
+        "gold_type": "DISJUNCTIVE",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "CONDITIONAL-CHAIN",
+        "hint_given": "CONDITIONAL CHAIN reasoning (if A then B; if B then C; therefore if A then C). Trace the chain of co"
+      },
+      {
+        "idx": 179,
+        "gold_type": "SYLLOGISM",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 193,
+        "gold_type": "DISJUNCTIVE",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 194,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 195,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 196,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 197,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 198,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "True",
+        "pred_label": "False",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "MODUS-PONENS",
+        "hint_given": "MODUS PONENS reasoning (if P then Q; P is true; therefore Q). Identify the conditional rule (if-then"
+      },
+      {
+        "idx": 199,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 200,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "DISJUNCTIVE",
+        "hint_given": "DISJUNCTIVE reasoning (either P or Q; not P; therefore Q). Identify the disjunction, determine which"
+      },
+      {
+        "idx": 201,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "False",
+        "pred_label": "False",
+        "composed_correct": true,
+        "condition": "hint_wrong",
+        "wrong_type_given": "SYLLOGISM",
+        "hint_given": "SYLLOGISTIC reasoning (All X are Y; Z is X; therefore Z is Y). Identify the universal rule, check ca"
+      },
+      {
+        "idx": 202,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "Unknown",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      },
+      {
+        "idx": 203,
+        "gold_type": "CONDITIONAL-CHAIN",
+        "gold_label": "Uncertain",
+        "pred_label": "True",
+        "composed_correct": false,
+        "condition": "hint_wrong",
+        "wrong_type_given": "NEGATION",
+        "hint_given": "NEGATION-based reasoning (not all X are Y; Z is X; therefore Z might not be Y). Carefully track nega"
+      }
+    ]
+  }
+}
