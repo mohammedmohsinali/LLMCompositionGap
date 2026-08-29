@@ -124,12 +124,16 @@ plt.close(fig)
 d_self = np.array([[mit(d, f, "self_structure") - mit(d, f, "original") for d in mdoms] for _, f in mnames])
 d_cot = np.array([[mit(d, f, "cot_structure") - mit(d, f, "original") for d in mdoms] for _, f in mnames])
 vmax = max(abs(d_self).max(), abs(d_cot).max())
-fig, axes = plt.subplots(1, 2, figsize=(11, 3.8))
-for ax, mat, title in [(axes[0], d_self, "$\\Delta$ Self-structure (pp)"),
-                       (axes[1], d_cot, "$\\Delta$ CoT-structure (pp)")]:
-    im = ax.imshow(mat, cmap="RdYlGn_r", vmin=-vmax, vmax=vmax, aspect="auto")
+fig, axes = plt.subplots(1, 2, figsize=(11, 3.8), sharey=True, gridspec_kw={"wspace": 0.12})
+for k, (ax, mat, title) in enumerate([(axes[0], d_self, "$\\Delta$ Self-structure (pp)"),
+                                      (axes[1], d_cot, "$\\Delta$ CoT-structure (pp)")]):
+    im = ax.imshow(mat, cmap="coolwarm", vmin=-vmax, vmax=vmax, aspect="auto")
     ax.set_xticks(range(4)); ax.set_xticklabels([d.title() for d in mdoms])
-    ax.set_yticks(range(3)); ax.set_yticklabels([n for n, _ in mnames])
+    ax.set_yticks(range(3))
+    if k == 0:
+        ax.set_yticklabels([n for n, _ in mnames])
+    else:
+        ax.tick_params(axis="y", left=False, labelleft=False)
     ax.set_title(title, fontsize=12)
     for i in range(3):
         for j in range(4):
