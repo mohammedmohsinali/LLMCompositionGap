@@ -72,7 +72,7 @@ for d in DOMAINS:
         base[d][c] = s
 out["baseline"] = base
 
-# ---------- 2. CoT identity check + permutation tests (20 comparisons) ----------
+# ---------- 2. Run-to-run ("-cot" = identical-prompt repeat run) checks ----------
 cot_tests = {}
 for d in DOMAINS:
     for fam in BASE4:
@@ -120,6 +120,15 @@ for d in DOMAINS:
     mech_avg[d] = {cond: round(sum(r[cond]["gap_pct"] for r in rows) / len(rows), 1)
                    for cond in ["original", "hint_correct", "hint_wrong"]}
 out["mechanism_avg_base4"] = mech_avg
+# averaged over the three full-scale families (paper Table 4; DeepSeek pilots excluded)
+FULL3 = ["gpt4o", "qwen7b", "llama8b"]
+mech_avg3 = {}
+for d in DOMAINS:
+    rows = [mech[d][c] for c in FULL3 if mech[d].get(c)]
+    if rows:
+        mech_avg3[d] = {cond: round(sum(r[cond]["gap_pct"] for r in rows) / len(rows), 1)
+                        for cond in ["original", "hint_correct", "hint_wrong"]}
+out["mechanism_avg_fullscale3"] = mech_avg3
 
 # ---------- 5. Mitigation (Tables 5/8/10/11) ----------
 mit = {}
@@ -191,7 +200,7 @@ for d in DOMAINS:
     s = base[d]["gpt4o"]
     print(f"{d}: {s['gap_pct']} CI {s['ci']} n={s['eligible']} total={s['total']}")
 
-print("\n=== CoT permutation tests ===")
+print("\n=== Run-1 vs run-2 permutation tests ('-cot' files are identical-prompt repeats) ===")
 for k, v in cot_tests.items(): print(f"{k}: {v}")
 
 print(f"\n=== Cross-domain: {out['cross_domain']['significant']}/{out['cross_domain']['total']} significant ===")
@@ -202,7 +211,9 @@ for d in DOMAINS:
         r = mech[d].get(c)
         if r: print(f"{d:>10} {c:>8}: orig {r['original']['gap_pct']} (n={r['original']['n']})  correct {r['hint_correct']['gap_pct']}  wrong {r['hint_wrong']['gap_pct']}")
 
-print("\n=== MECHANISM avg (base4) ===")
+print("\n=== MECHANISM avg (paper Table 4: GPT-4o/Qwen/Llama) ===")
+for d, r in mech_avg3.items(): print(f"{d}: {r}")
+print("\n=== MECHANISM avg incl. DeepSeek pilots (not used in paper) ===")
 for d, r in mech_avg.items(): print(f"{d}: {r}")
 
 print("\n=== MITIGATION (gpt4o / qwen7b / llama8b) ===")

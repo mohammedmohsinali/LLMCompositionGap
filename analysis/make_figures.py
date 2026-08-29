@@ -4,7 +4,7 @@ Usage:  python analysis/make_figures.py   (requires matplotlib)
 Writes: analysis/figures/*.png
 
 Figures produced here: the implicitness-gradient line chart, the CoT-delta
-heatmap, the mechanism bar chart, and the two mitigation figures. The
+heatmap of run-to-run differences, the mechanism bar chart, and the two mitigation figures. The
 failure-type distribution figure is not regenerated because the per-example
 error-taxonomy labels live in the annotation spreadsheet, not in these logs;
 its aggregate counts are given in the paper (Table 6).
@@ -47,7 +47,7 @@ def mit(domain, cfg, cond):
 # ---------- Figure: implicitness gradient ----------
 series = {
     "GPT-4o":           ("gpt4o",        "#1f77b4", "-",  "o"),
-    "GPT-4o+CoT":       ("gpt4o-cot",    "#000000", "--", "^"),
+    "GPT-4o (run 2)":   ("gpt4o-cot",    "#000000", "--", "^"),
     "DeepSeek (pilot)": ("deepseek",     "#2ca02c", "-",  "s"),
     "Qwen-7B":          ("qwen7b",       "#ff7f0e", "-",  "D"),
     "Llama-8B":         ("llama8b",      "#9467bd", "-",  "X"),
@@ -67,7 +67,7 @@ fig.tight_layout()
 fig.savefig(OUT / "figure1_implicitness_gradient.png", dpi=300)
 plt.close(fig)
 
-# ---------- Figure: CoT delta heatmap ----------
+# ---------- Figure: run-2 minus run-1 heatmap (the -cot files are identical-prompt repeats) ----------
 fams = [("GPT-4o", "gpt4o"), ("Qwen-7B", "qwen7b"), ("Llama-8B", "llama8b")]
 delta = np.array([[gap(d, f + "-cot") - gap(d, f) for d in DOMAINS] for _, f in fams])
 fig, ax = plt.subplots(figsize=(9, 3.2))
@@ -77,8 +77,8 @@ ax.set_yticks(range(3)); ax.set_yticklabels([n for n, _ in fams])
 for i in range(3):
     for j in range(5):
         ax.text(j, i, f"{delta[i, j]:+.1f}", ha="center", va="center", fontsize=10)
-fig.colorbar(im, ax=ax, label="CoT $-$ Base (pp)")
-fig.savefig(OUT / "figure2_cot_delta.png", dpi=300, bbox_inches="tight")
+fig.colorbar(im, ax=ax, label="Run 2 $-$ Run 1 (pp)")
+fig.savefig(OUT / "figure2_run_delta.png", dpi=300, bbox_inches="tight")
 plt.close(fig)
 
 # ---------- Figure: mechanism (3 full-scale family averages, code excluded) ----------

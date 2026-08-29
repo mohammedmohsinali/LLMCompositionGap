@@ -34,10 +34,15 @@ rubric is in `annotation/`.
 experiments_v2/
   core.py                 model configs and API/OSS call helpers
   <domain>/run.py         two-pass baseline runner (contracts, math, sql, code, logic)
-  <domain>/results/       per-example prediction logs + aggregate results (8 configs each)
+  <domain>/results/       per-example prediction logs + aggregate results (see
+                          "About the -cot files" below)
   mechanism/              correct/wrong structural-hint experiment + logs
   mitigation/             structure-aware prompting experiment + logs
   run_all_*.sh            sweep scripts (API models / open-source models)
+experiments/<x>_composition_gap/
+  classify_*.py           the rule-based structure classifiers imported by the runners
+  data/*_classified.json  benchmark examples with the author-assigned structural type
+                          used for hints and for the logic Pass-1 gold
 data/annotated/splits/test.csv   the contract corpus (public-sector agreements,
                                  constraint-type labels; the paper evaluates the
                                  first 2,000 constraint-labeled clauses)
@@ -57,6 +62,24 @@ from a model related to GPT-4o, its contracts gap may partly reflect agreement
 with model-anchored labels. The rationales are kept in the release so the
 labels can be audited or replaced.
 
+## About the `-cot` files (no Chain-of-Thought condition exists)
+
+Each configuration has a `*-cot` twin (`gpt4o-cot`, `qwen7b-cot`, ...). These
+were intended as Chain-of-Thought runs, but the `cot` flag in `core.py` is
+defined and never read by any runner, so every `-cot` file is a **repeat run
+with identical prompts**. The camera-ready paper reports them only as a
+run-to-run stability check (Section 5.1) and makes no CoT claims. For
+DeepSeek the repeat run is full-scale for math and code, whereas the first
+run is a 50-example pilot in every domain.
+
+## Reproducing the exact evaluated sets
+
+The reported GPT-4o/Qwen/Llama runs used `--limit 2000`, which only affects
+contracts (the other benchmarks are smaller): `bash run_all_api.sh 2000`.
+The DeepSeek pilots used `--limit 50`. The runners read the benchmark files
+from `experiments/<x>_composition_gap/data/` (included) and the contract
+corpus from `data/annotated/splits/test.csv`.
+
 ## Scoring protocols (please read before comparing numbers)
 
 The composed-task (Pass-2) criterion differs by domain, exactly as documented
@@ -64,11 +87,11 @@ in Section 3.4 of the paper:
 
 | Domain | Pass-1 pieces | Pass-2 scored as |
 |---|---|---|
-| Contracts | modality + condition vs. gold | constraint-type label match vs. gold |
-| Math | quantities + operations vs. gold | exact final-answer match vs. gold |
-| SQL | tables/filters/aggregations vs. gold | **structural-template match** of the generated query vs. the gold query (rule-based classifier; not execution accuracy) |
-| Logic | entities + logical form vs. gold | true/false/unknown label match vs. gold |
-| Code | model's own answers, **not gold-scored** | **plan-consistency**: generated code's control flow vs. the model's own Pass-1 answers (not functional correctness) |
+| Contracts | modality + condition derived from the gold label (corpus has HARD/SOFT only, so gold condition is always "no") | HARD/SOFT label match vs. gold |
+| Math | >=70% of gold numbers; >=1 gold operation keyword | exact final-answer match vs. gold |
+| SQL | tables at >=50% overlap; filters/aggregations by presence vs. gold | **structural-template match** of the generated query vs. the gold query (rule-based classifier; not execution accuracy) |
+| Logic | entities at >=50% overlap; author-assigned logic type match | true/false/unknown label match vs. gold |
+| Code | two yes/no questions (iteration, recursion); answers **not gold-scored** | **plan-consistency**: generated code's control flow vs. the model's own Pass-1 answers (not functional correctness) |
 
 Consequences, stated in the paper and repeated here:
 
@@ -98,9 +121,8 @@ bash run_all_oss.sh            # Qwen/Llama (GPU; pinned HF checkpoints)
 ```
 
 Datasets: math uses the GSM8K test split, SQL the Spider dev split, code
-HumanEval, and logic the FOLIO validation split; the domain runners expect
-these under `experiments_v2/<domain>/data/` (see each `run.py` `load_data`
-for accepted filenames). The contract corpus ships in this repository. The
+HumanEval, and logic the FOLIO validation split; the classified copies the
+runners read are included under `experiments/<x>_composition_gap/data/`. The contract corpus ships in this repository. The
 proprietary models were accessed via the `gpt-4o` and `deepseek-chat` API
 aliases in April 2026; those aliases do not expose snapshot identifiers, so
 regenerated outputs may drift as providers update them.
