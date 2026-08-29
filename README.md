@@ -140,6 +140,7 @@ regenerated outputs may drift as providers update them.
 
 ## License
 
-MIT (see `LICENSE`). The contract corpus is derived from publicly available
-public-sector agreements; benchmark datasets (GSM8K, Spider, HumanEval,
-FOLIO) retain their original licenses and are not redistributed here.
+MIT (see `LICENSE`) for the code and the contract corpus, which is derived
+from publicly available public-sector agreements. The classified copies of
+GSM8K, Spider, HumanEval, and FOLIO examples under `experiments/` are
+redistributed under those benchmarks' original licenses.
