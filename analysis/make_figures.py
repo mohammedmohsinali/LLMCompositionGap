@@ -71,10 +71,9 @@ plt.close(fig)
 fams = [("GPT-4o", "gpt4o"), ("Qwen-7B", "qwen7b"), ("Llama-8B", "llama8b")]
 delta = np.array([[gap(d, f + "-cot") - gap(d, f) for d in DOMAINS] for _, f in fams])
 fig, ax = plt.subplots(figsize=(9, 3.2))
-im = ax.imshow(delta, cmap="RdBu_r", vmin=-1, vmax=1, aspect="auto")
+im = ax.imshow(delta, cmap="coolwarm", vmin=-5, vmax=5, aspect="auto")
 ax.set_xticks(range(5)); ax.set_xticklabels([d.title() for d in DOMAINS])
 ax.set_yticks(range(3)); ax.set_yticklabels([n for n, _ in fams])
-ax.set_title("Chain-of-Thought changes are negligible across domains")
 for i in range(3):
     for j in range(5):
         ax.text(j, i, f"{delta[i, j]:+.1f}", ha="center", va="center", fontsize=10)
@@ -89,10 +88,10 @@ vals = {c: [np.mean([mech(d, f, c) for f in fams3]) for d in mdoms]
         for c in ["original", "hint_correct", "hint_wrong"]}
 fig, ax = plt.subplots(figsize=(10, 4.5))
 x = np.arange(4); w = 0.26
-for off, cond, col, lab in [(-w, "original", "#7f7f7f", "Original"),
-                            (0, "hint_correct", "#2ca02c", "Correct hint"),
-                            (w, "hint_wrong", "#d62728", "Wrong hint")]:
-    bars = ax.bar(x + off, vals[cond], w, color=col, label=lab)
+for off, cond, col, hatch, lab in [(-w, "original", "#7f7f7f", "", "Original"),
+                                   (0, "hint_correct", "#1f77b4", "//", "Correct hint"),
+                                   (w, "hint_wrong", "#d62728", "xx", "Wrong hint")]:
+    bars = ax.bar(x + off, vals[cond], w, color=col, hatch=hatch, edgecolor="white", label=lab)
     for b, v in zip(bars, vals[cond]):
         ax.text(b.get_x() + b.get_width() / 2, v + 1, f"{v:.1f}", ha="center", fontsize=10)
 ax.set_xticks(x); ax.set_xticklabels([d.title() for d in mdoms])

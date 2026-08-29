@@ -20,9 +20,13 @@ prediction logs included in this repository:
 
 ```bash
 pip install -r requirements.txt   # only numpy/matplotlib needed for analysis
-python analysis/recompute_tables.py   # prints every table, writes recompute_out.json
+python analysis/recompute_tables.py   # prints every log-derived table, writes recompute_out.json
 python analysis/make_figures.py       # regenerates the data-derived figures
 ```
+
+The one table not regenerable from the logs is the manual error taxonomy
+(Table 6 / Figure 7); its aggregate counts are reported in the paper and its
+rubric is in `annotation/`.
 
 ## Repository layout
 
@@ -37,8 +41,21 @@ experiments_v2/
 data/annotated/splits/test.csv   the contract corpus (public-sector agreements,
                                  constraint-type labels; the paper evaluates the
                                  first 2,000 constraint-labeled clauses)
-analysis/                 scripts that regenerate every table and figure
+annotation/               the four-category error-taxonomy rubric used in the paper
+analysis/                 scripts that regenerate every log-derived table and figure
 ```
+
+## Contract corpus: label provenance
+
+The `constraint_type` column of `test.csv` (the gold label for both contract
+passes) was produced by an LLM-assisted annotation pass: an OpenAI model
+proposed each label together with a written rationale, stored verbatim in the
+`notes` column with the prefix `auto-openai:`. The authors defined the label
+scheme and reviewed samples, but the labels were **not** hand-verified clause
+by clause. The paper states this in Section 4.2 and Limitations, including the
+resulting caveat that GPT-4o's contracts gap may partly reflect agreement with
+labels produced by a related model. The rationales are kept in the release so
+the labels can be audited or replaced.
 
 ## Scoring protocols (please read before comparing numbers)
 
