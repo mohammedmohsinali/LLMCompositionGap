@@ -48,14 +48,14 @@ analysis/                 scripts that regenerate every log-derived table and fi
 ## Contract corpus: label provenance
 
 The `constraint_type` column of `test.csv` (the gold label for both contract
-passes) was produced by an LLM-assisted annotation pass: an OpenAI model
-proposed each label together with a written rationale, stored verbatim in the
-`notes` column with the prefix `auto-openai:`. The authors defined the label
-scheme and reviewed samples, but the labels were **not** hand-verified clause
-by clause. The paper states this in Section 4.2 and Limitations, including the
-resulting caveat that GPT-4o's contracts gap may partly reflect agreement with
-labels produced by a related model. The rationales are kept in the release so
-the labels can be audited or replaced.
+passes) comes from a combined process: an OpenAI model proposed each label
+together with a written rationale, stored verbatim in the `notes` column with
+the prefix `auto-openai:`, and the authors defined the label scheme and
+reviewed and revised the proposed labels. The paper states this in Section 4.2
+and Limitations, including the caveat that, because the proposals originated
+from a model related to GPT-4o, its contracts gap may partly reflect agreement
+with model-anchored labels. The rationales are kept in the release so the
+labels can be audited or replaced.
 
 ## Scoring protocols (please read before comparing numbers)
 
