@@ -59,7 +59,7 @@ def elig_indicators(preds):
 
 out = {}
 
-# ---------- 1. Baselines (Table 2 + Table 9) ----------
+# ---------- 1. Baselines (paper Table 2 + Appendix Table 6) ----------
 base = {}
 for d in DOMAINS:
     base[d] = {}
@@ -97,7 +97,7 @@ for fam in BASE4:
         cross[f"{fam}:{d1}-vs-{d2}"] = round(p, 4)
 out["cross_domain"] = {"tests": cross, "significant": sig, "total": tot}
 
-# ---------- 4. Mechanism (Tables 4 and 7) ----------
+# ---------- 4. Mechanism (paper Table 3 + Appendix Table 9) ----------
 mech = {}
 for d in DOMAINS:
     mech[d] = {}
@@ -130,7 +130,7 @@ for d in DOMAINS:
                         for cond in ["original", "hint_correct", "hint_wrong"]}
 out["mechanism_avg_fullscale3"] = mech_avg3
 
-# ---------- 5. Mitigation (Tables 5/8/10/11) ----------
+# ---------- 5. Mitigation (paper Table 4 + Appendix Tables 10-12) ----------
 mit = {}
 for d in DOMAINS:
     mit[d] = {}

@@ -25,7 +25,7 @@ python analysis/make_figures.py       # regenerates the data-derived figures
 ```
 
 The one table not regenerable from the logs is the manual error taxonomy
-(Table 6 / Figure 7); its aggregate counts are reported in the paper and its
+(Table 5 / Figure 6); its aggregate counts are reported in the paper and its
 rubric is in `annotation/`.
 
 ## Repository layout
@@ -41,8 +41,8 @@ experiments_v2/
   run_all_*.sh            sweep scripts (API models / open-source models)
 experiments/<x>_composition_gap/
   classify_*.py           the rule-based structure classifiers imported by the runners
-  data/*_classified.json  benchmark examples with the author-assigned structural type
-                          used for hints and for the logic Pass-1 gold
+  data/*_classified.json  benchmark examples with the rule-derived structural type
+                          (from classify_*.py) used for hints and for the logic Pass-1 gold
 data/annotated/splits/test.csv   the contract corpus (public-sector agreements,
                                  constraint-type labels; the paper evaluates the
                                  first 2,000 constraint-labeled clauses)
@@ -53,10 +53,11 @@ analysis/                 scripts that regenerate every log-derived table and fi
 ## Contract corpus: label provenance
 
 The `constraint_type` column of `test.csv` (the gold label for both contract
-passes) comes from a combined process: an OpenAI model proposed each label
+passes) comes from a combined process: an OpenAI model (GPT-4o) proposed each label
 together with a written rationale, stored verbatim in the `notes` column with
 the prefix `auto-openai:`, and the authors defined the label scheme and
-reviewed and revised the proposed labels. The paper states this in Section 4.2
+reviewed and revised the proposed labels (the file records the model's
+rationale, not the revisions). The paper states this in Section 4.2
 and Limitations, including the caveat that, because the proposals originated
 from a model related to GPT-4o, its contracts gap may partly reflect agreement
 with model-anchored labels. The rationales are kept in the release so the
@@ -87,10 +88,10 @@ in Section 3.4 of the paper:
 
 | Domain | Pass-1 pieces | Pass-2 scored as |
 |---|---|---|
-| Contracts | modality + condition derived from the gold label (corpus has HARD/SOFT only, so gold condition is always "no") | HARD/SOFT label match vs. gold |
+| Contracts | modality + condition derived from the gold label (every evaluated clause is HARD/SOFT, so gold condition is always "no"; the CSV also has 207 NOT_CONSTRAINT and 497 unlabeled rows the runner skips) | HARD/SOFT label match vs. gold |
 | Math | >=70% of gold numbers; >=1 gold operation keyword | exact final-answer match vs. gold |
 | SQL | tables at >=50% overlap; filters/aggregations by presence vs. gold | **structural-template match** of the generated query vs. the gold query (rule-based classifier; not execution accuracy) |
-| Logic | entities at >=50% overlap; author-assigned logic type match | true/false/unknown label match vs. gold |
+| Logic | entities at >=50% overlap; rule-derived logic type match (classify_logic_structure.py) | true/false/unknown label match vs. gold |
 | Code | two yes/no questions (iteration, recursion); answers **not gold-scored** | **plan-consistency**: generated code's control flow vs. the model's own Pass-1 answers (not functional correctness) |
 
 Consequences, stated in the paper and repeated here:
@@ -117,7 +118,7 @@ export OPENAI_API_KEY=...      # GPT-4o
 export DEEPSEEK_API_KEY=...    # DeepSeek
 cd experiments_v2
 bash run_all_api.sh            # API models
-bash run_all_oss.sh            # Qwen/Llama (GPU; pinned HF checkpoints)
+bash run_all_oss.sh            # Qwen/Llama (GPU; loaded by HF repo name, no revision hash)
 ```
 
 Datasets: math uses the GSM8K test split, SQL the Spider dev split, code

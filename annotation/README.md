@@ -20,5 +20,5 @@ labeled under the plan-consistency protocol (paper Section 3.4): "structure"
 there refers to the control-flow plan the model itself stated in Pass 1.
 
 Worked examples of each category, taken verbatim from the prediction logs, are
-in Appendix G of the paper. Per-example labels for the 916 cases are held in
+in Appendix F of the paper. Per-example labels for the 916 cases are held in
 the authors' annotation spreadsheet and are not part of this release.
